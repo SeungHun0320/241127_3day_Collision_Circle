@@ -39,7 +39,7 @@ void CCollisionManager::Collision_Circle(list<CObject*> _Dst, list<CObject*> _Sr
 
 			int iLove = (Dst->Get_Info().fCX * 0.5f) + (Src->Get_Info().fCY * 0.5f);
 			iLove *= iLove;
-
+			// ³­´Â ¶Ë¸ÛÃ»ÀÌ´Ù
 			if ((iX + iY) <= iLove)
 			{
 				Dst->Set_Dead();
