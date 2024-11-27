@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="00_MainGame">
+      <UniqueIdentifier>{304d2f60-8fc7-44c3-a14f-350ef0e89851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Object">
+      <UniqueIdentifier>{4f4da7dd-14cb-4583-b7bb-7c4b9e51c6ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Object\00_ObJect">
+      <UniqueIdentifier>{99b65ba0-e37d-4d4c-852a-60b8287d01aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Object\01_Player">
+      <UniqueIdentifier>{08f664e1-cf66-4e84-aaa2-96a6ed05c901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Object\02_Bullet">
+      <UniqueIdentifier>{6da06068-545e-4e34-940e-0366c727ceb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Object\03_Monster">
+      <UniqueIdentifier>{c2c2d751-a55c-45e7-bc58-00654736e856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Design_Patten">
+      <UniqueIdentifier>{545cd13e-dc9f-4220-89d5-2466aadf2e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Design_Patten\AbstractFactory">
+      <UniqueIdentifier>{e8d41fee-4047-4dbf-ab70-52b2360d069f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Design_Patten\CollisionManager">
+      <UniqueIdentifier>{da3d0547-d269-40bc-a496-39a0f1d786bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultWindow.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>00_MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>01_Object\00_ObJect</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01_Object\01_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>01_Object\02_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>01_Object\03_Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>02_Design_Patten\AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>02_Design_Patten\CollisionManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DefaultWindow.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>00_MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>01_Object\00_ObJect</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01_Object\01_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>01_Object\02_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>01_Object\03_Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>02_Design_Patten\CollisionManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DefaultWindow.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="DefaultWindow.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
