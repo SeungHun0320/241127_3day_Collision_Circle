@@ -14,7 +14,8 @@ CPlayer::~CPlayer()
 void CPlayer::Initialize()
 {
 	m_tInfo = { WINCX * 0.5f, WINCY * 0.5f, 40.f, 80.f };
-	m_fSpeed = 10.f;
+	m_fXSpeed = 10.f;
+	m_fYSpeed = 10.f;
 }
 
 int CPlayer::Update()
@@ -52,25 +53,25 @@ void CPlayer::Key_Input()
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
 		if(750 > m_tRect.right)
-			m_tInfo.fX += m_fSpeed;
+			m_tInfo.fX += m_fXSpeed;
 	}
 
 	if (GetAsyncKeyState(VK_LEFT))
 	{
 		if (50 < m_tRect.left)
-			m_tInfo.fX -= m_fSpeed;
+			m_tInfo.fX -= m_fXSpeed;
 	}
 
 	if (GetAsyncKeyState(VK_UP))
 	{
 		if (50 < m_tRect.top)
-			m_tInfo.fY -= m_fSpeed;
+			m_tInfo.fY -= m_fYSpeed;
 	}
 
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		if (550 > m_tRect.bottom)
-			m_tInfo.fY += m_fSpeed;
+			m_tInfo.fY += m_fYSpeed;
 	}
 
 

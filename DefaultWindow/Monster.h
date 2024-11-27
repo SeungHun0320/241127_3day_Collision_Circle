@@ -18,7 +18,6 @@ public:
 	void Set_Hp(int iHp);
 
 private:
-	bool m_bRight;
 	int m_iHp;
 };
 

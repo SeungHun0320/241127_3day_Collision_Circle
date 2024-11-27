@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Monster.h"
 
-CMonster::CMonster() : m_bRight(true), m_iHp(0)
+CMonster::CMonster() : m_iHp(0)
 {
 }
 
@@ -12,7 +12,8 @@ CMonster::~CMonster()
 void CMonster::Initialize()
 {
 	m_tInfo = { 100.f, 150.f, 80.f, 80.f };
-	m_fSpeed = 3;
+	m_fXSpeed = 3.f;
+	m_fYSpeed = 3.f;
 	m_iHp = 15;
 }
 
@@ -21,14 +22,46 @@ int CMonster::Update()
 	if (m_bDead == true)
 		return OBJ_DEAD;
 
-	if (m_bRight == true)
+	
+	switch (m_eDirect)
 	{
-		m_tInfo.fX += m_fSpeed;
+	case UP:
+		m_tInfo.fY -= m_fYSpeed;
+		break;
+
+	case DOWN:
+		m_tInfo.fY += m_fYSpeed;
+		break;
+
+	case LEFT:
+		m_tInfo.fX -= m_fXSpeed;
+		break;
+
+	case RIGHT:
+		m_tInfo.fX += m_fXSpeed;
+		break;
+
+	case LEFTUP:
+		m_tInfo.fX -= m_fXSpeed;
+		m_tInfo.fY -= m_fYSpeed;
+		break;
+
+	case LEFTDOWN:
+		m_tInfo.fX -= m_fXSpeed;
+		m_tInfo.fY += m_fYSpeed;
+		break;
+
+	case RIGHTUP:
+		m_tInfo.fX += m_fXSpeed;
+		m_tInfo.fY -= m_fYSpeed;
+		break;
+
+	case RIGHTDOWN:
+		m_tInfo.fX += m_fXSpeed;
+		m_tInfo.fY += m_fYSpeed;
+		break;
 	}
-	if (m_bRight == false)
-	{
-		m_tInfo.fX -= m_fSpeed;
-	}
+
 	__super::Update_Rect();
 
 	return OBJ_NOEVENT;
@@ -36,11 +69,13 @@ int CMonster::Update()
 
 void CMonster::Late_Update()
 {
-	if (750 < m_tRect.right)
-		m_bRight = false;
+	if (WINCX - 50 < m_tRect.right || 50 > m_tRect.left)
+	{
+		m_fXSpeed *= -1.f;
+	}
+	if (WINCY - 50 < m_tRect.bottom || 50 > m_tRect.top)
+		m_fYSpeed *= -1.f;
 
-	if (50 > m_tRect.left)
-		m_bRight = true;
 }
 
 void CMonster::Render(HDC hDC)

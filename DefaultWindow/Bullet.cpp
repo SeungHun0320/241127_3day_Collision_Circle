@@ -15,7 +15,8 @@ void CBullet::Initialize()
 	m_tInfo.fCX = 30.f;
 	m_tInfo.fCY = 30.f;
 
-	m_fSpeed = 7.f;
+	m_fXSpeed = 7.f;
+	m_fYSpeed = 7.f;
 }
 
 int CBullet::Update()
@@ -24,13 +25,13 @@ int CBullet::Update()
 		return OBJ_DEAD;
 
 	if(m_eDirect == UP)
-		m_tInfo.fY -= m_fSpeed;
+		m_tInfo.fY -= m_fYSpeed;
 	if (m_eDirect == DOWN)
-		m_tInfo.fY += m_fSpeed;
+		m_tInfo.fY += m_fYSpeed;
 	if (m_eDirect == LEFT)
-		m_tInfo.fX -= m_fSpeed;
+		m_tInfo.fX -= m_fXSpeed;
 	if (m_eDirect == RIGHT)
-		m_tInfo.fX += m_fSpeed;
+		m_tInfo.fX += m_fXSpeed;
 
 	__super::Update_Rect();
 

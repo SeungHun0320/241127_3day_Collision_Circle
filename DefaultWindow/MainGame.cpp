@@ -6,7 +6,7 @@
 #include "CollisionManager.h"
 
 CMainGame::CMainGame()
-	: m_hDC(nullptr), m_trc(),
+	: m_hDC(nullptr), m_ullTime(0),
 	m_dwTime(0), m_iFPS(0)
 {
 	ZeroMemory(&m_szFPS, sizeof(m_szFPS));
@@ -19,6 +19,8 @@ CMainGame::~CMainGame()
 
 void CMainGame::Initialize()
 {
+	srand(unsigned(time(NULL)));
+
 	m_hDC = GetDC(g_hWnd);
 	m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create());
 	if (CPlayer* Temp = dynamic_cast<CPlayer*>(m_ObjList[OBJ_PLAYER].front()))
@@ -26,14 +28,24 @@ void CMainGame::Initialize()
 		Temp->Set_Bullet(&m_ObjList[OBJ_BULLET]);
 	}
 
-	for (int i = 0; i < 4; i++)
-	{
-		m_ObjList[OBJ_MONSTER].push_back(CAbstractFactory<CMonster>::Create(100.f, ((i + 1) * 120.f), ZERO));
-	}
+	//for (int i = 0; i < 4; i++)
+	//{
+	//	m_ObjList[OBJ_MONSTER].push_back(CAbstractFactory<CMonster>::Create(100.f, ((i + 1) * 120.f), ZERO));
+	//}
 }
 
 void CMainGame::Update()
 {
+	if (m_ullTime + 2000 <= GetTickCount64())
+	{
+		float fRandomX = rand() % (400 - 100 + 1) + 100;
+		float fRandomY = rand() % (300 - 100 + 1) + 100;
+		DIRECTION eRandom = static_cast<DIRECTION>(rand() % 8 + 1);
+		m_ObjList[OBJ_MONSTER].push_back(CAbstractFactory<CMonster>::Create(fRandomX, fRandomY, eRandom));
+		m_ullTime = GetTickCount64();
+	}
+
+
 	for (int i = 0; i < OBJ_END; i++)
 	{
 		for (auto iter = m_ObjList[i].begin();

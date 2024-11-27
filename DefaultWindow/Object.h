@@ -1,7 +1,7 @@
 #pragma once
 #include "define.h"
 
-enum DIRECTION { ZERO, UP, DOWN, LEFT, RIGHT };
+enum DIRECTION { ZERO, UP, DOWN, LEFT, RIGHT, LEFTUP, RIGHTUP, LEFTDOWN, RIGHTDOWN };
 
 
 class CObject
@@ -41,7 +41,8 @@ protected:
 	RECT m_tRect;   // 그리기용 렉트
 
 	bool m_bDead;
-	float m_fSpeed; // 속도
+	float m_fXSpeed; // 속도
+	float m_fYSpeed;
 	DIRECTION m_eDirect; // 방향 설정
 };
 

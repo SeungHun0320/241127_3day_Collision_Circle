@@ -25,7 +25,7 @@ private:
 	ULONG64 m_dwTime;
 	int   m_iFPS;
 	TCHAR m_szFPS[16];
-
-	RECT m_trc;
+	
+	ULONG64 m_ullTime;
 };
 
